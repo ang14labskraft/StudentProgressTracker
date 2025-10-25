@@ -1,0 +1,84 @@
+<div class="student-details-container">
+    <!-- Loading State -->
+    @if (loading) {
+        <div class="loading">
+            Loading student details...
+        </div>
+    }
+
+    <!-- Error State -->
+    @if (error) {
+        <div class="error">
+            {{ error }}
+            <button class="btn-back" routerLink="/students">Back to List</button>
+        </div>
+    }
+
+    <!-- Student Details -->
+    @if (student && !loading && !error) {
+        <div class="details-card">
+            <div class="card-header">
+                <div class="header-content">
+                    <a routerLink="/students" class="back-link">
+                        <span class="material-icons-round back-icon">arrow_back_ios</span>
+                        <span class="back-text">Back</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="student-info">
+                <div class="info-section">
+                    <h3>Personal Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Full Name:</label>
+                            <span>{{ student.name }}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>First Name:</label>
+                            <span>{{ firstName }}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Last Name:</label>
+                            <span>{{ lastName }}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Class:</label>
+                            <span>{{ student.class }}</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Section:</label>
+                            <span>{{ student.section }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Academic Performance</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Mathematics:</label>
+                            <span>{{ student.math }}/100</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Science:</label>
+                            <span>{{ student.science }}/100</span>
+                        </div>
+                        <div class="info-item">
+                            <label>English:</label>
+                            <span>{{ student.english }}/100</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Total Score:</label>
+                            <span class="total-score">{{ student.total }}/300</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Final Grade:</label>
+                            <span class="grade" [class]="getGradeColor(student.grade)">{{ student.grade }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
