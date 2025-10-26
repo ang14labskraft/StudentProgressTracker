@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Student } from '../models/student';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
     providedIn: 'root'
@@ -21,11 +22,15 @@ export class StudentService {
 
     /**
      * Add a new student
-     * @param student Student object to be added
-     * @returns Observable<Student> Added student with generated ID
+     * @param student Student data without ID
+     * @returns Observable<Student> Added student with generated UUID
      */
-    addStudent(student: Student): Observable<Student> {
-        return this.http.post<Student>(this.apiUrl, student);
+    addStudent(student: Omit<Student, 'id'>): Observable<Student> {
+        const newStudent = {
+            ...student,
+            id: uuidv4()
+        };
+        return this.http.post<Student>(this.apiUrl, newStudent);
     }
 
     /**
@@ -33,7 +38,7 @@ export class StudentService {
      * @param id ID of the student to delete
      * @returns Observable<void>
      */
-    deleteStudent(id: number): Observable<void> {
+    deleteStudent(id: string): Observable<void> {
         const url = `${this.apiUrl}/${id}`;
         return this.http.delete<void>(url);
     }
@@ -43,8 +48,19 @@ export class StudentService {
      * @param id ID of the student to retrieve
      * @returns Observable<Student> The requested student
      */
-    getStudentById(id: number): Observable<Student> {
+    getStudentById(id: string): Observable<Student> {
         const url = `${this.apiUrl}/${id}`;
         return this.http.get<Student>(url);
+    }
+
+    /**
+     * Update an existing student
+     * @param id ID of the student to update
+     * @param student Updated student data
+     * @returns Observable<Student> The updated student
+     */
+    updateStudent(id: string, student: Omit<Student, 'id'>): Observable<Student> {
+        const url = `${this.apiUrl}/${id}`;
+        return this.http.put<Student>(url, { ...student, id });
     }
 }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { StudentService } from '../../services/student.service';
 import { Student } from '../../models/student';
+import { ToastService } from '../../services/toast.service';
 
 interface StudentWithNames extends Student {
   firstName: string;
@@ -21,7 +23,10 @@ export class StudentList implements OnInit {
   loading: boolean = true;
   error: string | null = null;
 
-  constructor(private studentService: StudentService) {}
+  constructor(
+    private studentService: StudentService,
+    private toastService: ToastService
+  ) {}
 
   ngOnInit(): void {
     this.loadStudents();
@@ -50,19 +55,23 @@ export class StudentList implements OnInit {
         this.error = 'Failed to load students. Please try again later.';
         this.loading = false;
         console.error('Error loading students:', error);
+        this.toastService.showError('Failed to perform the operation');
       }
     });
   }
 
-  deleteStudent(id: number): void {
+  deleteStudent(id: string): void {
     if (confirm('Are you sure you want to delete this student?')) {
       this.studentService.deleteStudent(id).subscribe({
         next: () => {
           this.students = this.students.filter(student => student.id !== id);
+          this.toastService.showSuccess('Student deleted successfully');
+          // Force the view to update
+          this.students = [...this.students];
         },
         error: (error) => {
           console.error('Error deleting student:', error);
-          alert('Failed to delete student. Please try again.');
+          this.toastService.showError('Failed to perform the operation');
         }
       });
     }

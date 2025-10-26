@@ -41,6 +41,9 @@
                                 <button class="btn-icon btn-view" [routerLink]="['/details', student.id]" title="View Details">
                                     <span class="material-icons-round">visibility</span>
                                 </button>
+                                <button class="btn-icon btn-edit" [routerLink]="['/edit', student.id]" title="Edit Student">
+                                    <span class="material-icons-round">edit</span>
+                                </button>
                                 <button class="btn-icon btn-delete" (click)="deleteStudent(student.id)" title="Delete Student">
                                     <span class="material-icons-round">delete_outline</span>
                                 </button>

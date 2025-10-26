@@ -83,6 +83,14 @@ h2 {
     background-color: rgba(220, 53, 69, 0.1);
 }
 
+.btn-edit {
+    color: #ffc107;
+}
+
+.btn-edit:hover {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
 .loading,
 .error,
 .no-data {

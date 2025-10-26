@@ -26,14 +26,14 @@ export class StudentDetails implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const id = Number(params['id']);
+      const id = params['id'];
       if (id) {
         this.loadStudentDetails(id);
       }
     });
   }
 
-  private loadStudentDetails(id: number): void {
+  private loadStudentDetails(id: string): void {
     this.loading = true;
     this.error = null;
 
