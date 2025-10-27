@@ -17,20 +17,78 @@
 
     <!-- Data State -->
     @if (students.length > 0) {
+        <div class="header-container">
+            <div class="filters-container">
+                <div class="filter-group search-field">
+                    <span class="material-icons-round search-icon">search</span>
+                    <input type="text" 
+                           [(ngModel)]="filters.name" 
+                           (input)="applyFilters()"
+                           placeholder="Search students..."
+                           class="filter-input">
+                </div>
+                <div class="filter-group">
+                    <select [(ngModel)]="filters.class" 
+                            (change)="applyFilters()"
+                            class="filter-select">
+                        <option value="">All Classes</option>
+                        @for (class of uniqueClasses; track class) {
+                            <option [value]="class">Class {{ class }}</option>
+                        }
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select [(ngModel)]="filters.section" 
+                            (change)="applyFilters()"
+                            class="filter-select">
+                        <option value="">All Sections</option>
+                        @for (section of uniqueSections; track section) {
+                            <option [value]="section">Section {{ section }}</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+
         <div class="table-responsive">
             <table class="student-table">
                 <thead>
                     <tr>
-                        <th>Full Name</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Class</th>
-                        <th>Section</th>
+                        <th (click)="sort('name')" class="sortable">
+                            Full Name
+                            <span class="sort-icon">
+                                {{ getSortIcon('name') }}
+                            </span>
+                        </th>
+                        <th (click)="sort('firstName')" class="sortable">
+                            First Name
+                            <span class="sort-icon">
+                                {{ getSortIcon('firstName') }}
+                            </span>
+                        </th>
+                        <th (click)="sort('lastName')" class="sortable">
+                            Last Name
+                            <span class="sort-icon">
+                                {{ getSortIcon('lastName') }}
+                            </span>
+                        </th>
+                        <th (click)="sort('class')" class="sortable">
+                            Class
+                            <span class="sort-icon">
+                                {{ getSortIcon('class') }}
+                            </span>
+                        </th>
+                        <th (click)="sort('section')" class="sortable">
+                            Section
+                            <span class="sort-icon">
+                                {{ getSortIcon('section') }}
+                            </span>
+                        </th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @for (student of students; track student.id) {
+                    @for (student of filteredStudents; track student.id) {
                         <tr>
                             <td>{{ student.name }}</td>
                             <td>{{ student.firstName }}</td>
@@ -59,3 +117,4 @@
         </div>
     }
 </div>
+<app-chat></app-chat>

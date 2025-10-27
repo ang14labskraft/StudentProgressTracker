@@ -1,24 +1,125 @@
 {
- "students": [
- { "id": 1, "name": "Aarav Patel", "class": "10", "section": "A",
-"math": 85, "science": 78, "english": 88, "total": 251, "grade": "A" },
- { "id": 2, "name": "Isha Verma", "class": "9", "section": "B", "math":
-92, "science": 90, "english": 84, "total": 266, "grade": "A+" },
- { "id": 3, "name": "Rohan Das", "class": "10", "section": "A", "math":
-70, "science": 65, "english": 72, "total": 207, "grade": "B" },
- { "id": 4, "name": "Meera Shah", "class": "9", "section": "A", "math":
-88, "science": 82, "english": 91, "total": 261, "grade": "A" },
- { "id": 5, "name": "Kabir Nair", "class": "8", "section": "C", "math":
-60, "science": 58, "english": 64, "total": 182, "grade": "C" },
- { "id": 6, "name": "Sara D’Souza", "class": "10", "section": "B",
-"math": 95, "science": 97, "english": 92, "total": 284, "grade": "A+" },
- { "id": 7, "name": "Arjun Iyer", "class": "8", "section": "A", "math":
-75, "science": 70, "english": 78, "total": 223, "grade": "B+" },
- { "id": 8, "name": "Anaya Joshi", "class": "9", "section": "B", "math":
-89, "science": 85, "english": 90, "total": 264, "grade": "A" },
- { "id": 9, "name": "Ritvik Sharma", "class": "10", "section": "A",
-"math": 68, "science": 74, "english": 70, "total": 212, "grade": "B" },
- { "id": 10, "name": "Priya Menon", "class": "8", "section": "C",
-"math": 80, "science": 82, "english": 79, "total": 241, "grade": "A" }
- ]
+  "students": [
+    {
+      "name": "Aarav Patel",
+      "class": 10,
+      "section": "A",
+      "math": 85,
+      "science": 78,
+      "english": 88,
+      "total": 251,
+      "grade": "A",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Isha Verma",
+      "class": "9",
+      "section": "B",
+      "math": 92,
+      "science": 90,
+      "english": 84,
+      "total": 266,
+      "grade": "A+"
+    },
+    {
+      "id": "3",
+      "name": "Rohan Das",
+      "class": "10",
+      "section": "A",
+      "math": 70,
+      "science": 65,
+      "english": 72,
+      "total": 207,
+      "grade": "B"
+    },
+    {
+      "id": "4",
+      "name": "Meera Shah",
+      "class": "9",
+      "section": "A",
+      "math": 88,
+      "science": 82,
+      "english": 91,
+      "total": 261,
+      "grade": "A"
+    },
+    {
+      "id": "5",
+      "name": "Kabir Nair",
+      "class": "8",
+      "section": "C",
+      "math": 60,
+      "science": 58,
+      "english": 64,
+      "total": 182,
+      "grade": "C"
+    },
+    {
+      "id": "6",
+      "name": "Sara D’Souza",
+      "class": "10",
+      "section": "B",
+      "math": 95,
+      "science": 97,
+      "english": 92,
+      "total": 284,
+      "grade": "A+"
+    },
+    {
+      "id": "7",
+      "name": "Arjun Iyer",
+      "class": "8",
+      "section": "A",
+      "math": 75,
+      "science": 70,
+      "english": 78,
+      "total": 223,
+      "grade": "B+"
+    },
+    {
+      "id": "8",
+      "name": "Anaya Joshi",
+      "class": "9",
+      "section": "B",
+      "math": 89,
+      "science": 85,
+      "english": 90,
+      "total": 264,
+      "grade": "A"
+    },
+    {
+      "id": "9",
+      "name": "Ritvik Sharma",
+      "class": "10",
+      "section": "A",
+      "math": 68,
+      "science": 74,
+      "english": 70,
+      "total": 212,
+      "grade": "B"
+    },
+    {
+      "id": "10",
+      "name": "Priya Menon",
+      "class": "8",
+      "section": "C",
+      "math": 80,
+      "science": 82,
+      "english": 79,
+      "total": 241,
+      "grade": "A"
+    },
+    {
+      "id": "cae65e11-0b52-4f0f-a478-cb7d1615860f",
+      "name": "Amit Singh",
+      "class": 7,
+      "section": "A",
+      "math": 27,
+      "science": 56,
+      "english": 65,
+      "total": 148,
+      "grade": "F"
+    }
+  ]
 }

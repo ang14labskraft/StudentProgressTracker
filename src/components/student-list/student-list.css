@@ -5,11 +5,86 @@
 }
 
 h2 {
-    color: #2d3436;
-    margin-bottom: 20px;
+    color: #3c4043;
+    margin-bottom: 24px;
     font-size: 1.75rem;
-    font-weight: 600;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
+    font-family: 'Google Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.header-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+    padding: 0 4px;
+}
+
+.filters-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    background: white;
+    border-radius: 28px;
+    padding: 8px 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+    position: relative;
+    min-width: auto;
+}
+
+.search-field {
+    position: relative;
+    min-width: 240px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5f6368;
+    font-size: 20px;
+}
+
+.filter-input {
+    width: 100%;
+    padding: 8px 12px 8px 40px;
+    border: 1px solid transparent;
+    border-radius: 24px;
+    font-size: 14px;
+    background-color: #f1f3f4;
+    transition: all 0.2s ease;
+    color: #3c4043;
+}
+
+.filter-select {
+    padding: 8px 32px 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 24px;
+    font-size: 14px;
+    background-color: #f1f3f4;
+    color: #3c4043;
+    appearance: none;
+    cursor: pointer;
+    min-width: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%235f6368' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+}
+
+.filter-input:hover,
+.filter-select:hover {
+    background-color: #e8eaeb;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    outline: none;
+    background-color: white;
+    border-color: #1a73e8;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.30), 0 1px 3px 1px rgba(60,64,67,.15);
 }
 
 .table-responsive {

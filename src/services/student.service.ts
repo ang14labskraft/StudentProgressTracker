@@ -4,6 +4,23 @@ import { Observable } from 'rxjs';
 import { Student } from '../models/student';
 import { v4 as uuidv4 } from 'uuid';
 
+/**
+ * Service responsible for handling all student-related operations.
+ * Provides methods for CRUD operations on student data through HTTP requests.
+ * 
+ * @remarks
+ * This service communicates with the backend API at http://localhost:3000/students
+ * 
+ * @example
+ * ```typescript
+ * constructor(private studentService: StudentService) {
+ *   // Get all students
+ *   this.studentService.getAllStudents().subscribe(students => {
+ *     console.log(students);
+ *   });
+ * }
+ * ```
+ */
 @Injectable({
     providedIn: 'root'
 })
